@@ -24,7 +24,6 @@ class MainPage(QMainWindow):
         self.geocoder=OpenCageGeocode(self.key)
         self.mainpage.resInfo.clicked.connect(self.OnClickedResBtn)
     def OnClickedGvBtn(self):
-        print("Tıklandı")
         self.number = self.mainpage.lineEdit.text()#Girilen Numara
         self.newnumber = phonenumbers.parse(self.number)
         self.gsm=carrier.name_for_number(self.newnumber, "tr")
@@ -32,7 +31,6 @@ class MainPage(QMainWindow):
         self.mainpage.konumText.setText("Konum: "+self.location)
         self.mainpage.gsmText.setText("GSM:"+self.gsm)
     def OnClickedKonumBtn(self):
-        print("Butona TIklandı")
         self.number = self.mainpage.lineEdit.text()#Girilen Numara
         self.newnumber = phonenumbers.parse(self.number)
         self.location = geocoder.description_for_number(self.newnumber,"tr")
